@@ -74,11 +74,12 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
-        run: ${{ steps.detect-package-manager.outputs.runner }} next build
-        env:
-          NEXT_PUBLIC_SERVICE_ID: ${{ secrets.NEXT_PUBLIC_SERVICE_ID }}
-          NEXT_PUBLIC_TEMPLATE_ID: ${{ secrets.NEXT_PUBLIC_TEMPLATE_ID }}
-          NEXT_PUBLIC_PUBLIC_KEY: ${{ secrets.NEXT_PUBLIC_PUBLIC_KEY }}
+        run: |
+          touch .env.local
+          echo NEXT_PUBLIC_SERVICE_ID=${{ secrets.NEXT_PUBLIC_SERVICE_ID }} >> .env.local
+          echo NEXT_PUBLIC_TEMPLATE_ID=${{ secrets.NEXT_PUBLIC_TEMPLATE_ID }} >> .env.local
+          echo NEXT_PUBLIC_PUBLIC_KEY=${{ secrets.NEXT_PUBLIC_PUBLIC_KEY }} >> .env.local
+          ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
