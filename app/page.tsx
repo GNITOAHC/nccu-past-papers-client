@@ -54,7 +54,7 @@ async function sendMail(prop: PropT) {
     console.log('emailjs error: ', err)
   }
 
-  window.alert('Sended')
+  window.alert('申請成功，請確認你所提供的信箱')
 }
 
 const FormSchema = z.object({
@@ -69,7 +69,7 @@ const FormSchema = z.object({
 type FieldVal = { name: string; type: string; label: string; ph: string }
 const fields: FieldVal[] = [
   { name: 'dept', type: 'text', label: '系級', ph: '資訊二' },
-  { name: 'stuId', type: 'text', label: '學號', ph: '110703000' },
+  { name: 'stuId', type: 'text', label: '學號', ph: '110703099' },
   { name: 'name', type: 'text', label: '姓名', ph: '王小明' },
   { name: 'email', type: 'text', label: 'Email', ph: 'example@example.com' },
 ]
@@ -77,13 +77,9 @@ const fields: FieldVal[] = [
 export default function Home() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
-    defaultValues: {
-      dept: '',
-    },
   })
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
-    console.log(data)
     const prop = {
       dept: data.dept,
       stuId: data.stuId,
