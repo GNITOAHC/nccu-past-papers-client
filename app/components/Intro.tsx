@@ -2,17 +2,12 @@
 import { MessageCircleQuestion } from 'lucide-react'
 import {
   Dialog,
-  DialogClose,
   DialogContent,
-  DialogDescription,
   DialogFooter,
-  DialogHeader,
-  DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog'
 
 export default function Intro() {
-  // return <MessageCircleQuestion className="w-8 h-8" />
   return (
     <Dialog>
       <DialogTrigger asChild>
