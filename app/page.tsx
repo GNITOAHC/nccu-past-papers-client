@@ -71,7 +71,12 @@ const fields: FieldVal[] = [
   { name: 'dept', type: 'text', label: '系級', ph: '資訊二' },
   { name: 'stuId', type: 'text', label: '學號', ph: '110703099' },
   { name: 'name', type: 'text', label: '姓名', ph: '王小明' },
-  { name: 'email', type: 'text', label: 'Email', ph: 'example@example.com' },
+  {
+    name: 'email',
+    type: 'text',
+    label: 'Email (with GitHub account)',
+    ph: 'example@example.com',
+  },
 ]
 
 export default function Home() {
