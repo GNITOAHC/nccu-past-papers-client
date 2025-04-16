@@ -1,3 +1,7 @@
+THIS REPO IS ARCHIVED, PLEASE REDIRECT TO [NCCU-PAST-PAPERS-WEB](https://github.com/GNITOAHC/nccu-past-papers-web)
+
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
